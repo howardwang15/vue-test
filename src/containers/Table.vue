@@ -1,5 +1,5 @@
 <template>
-    <table class="table" style={style}>
+    <table class="table">
         <thead>
             <tr>
                 <th>Name</th>
@@ -8,8 +8,8 @@
         </thead>
         <tbody>
             <tr v-for="target in data" v-bind:key="target.name">
-                <td>{{target.name}}</td>
-                <td>{{target.size}}</td>
+                <td scope='col'>{{target.name}}</td>
+                <td scope='col'>{{target.size}}</td>
             </tr>
         </tbody>
     </table>
@@ -19,9 +19,6 @@ export default {
   name: 'Table',
   data () {
     return {
-      style: {
-        margin: '2vh'
-      },
       data: [
         {
           name: 'target1.jpg',
@@ -41,5 +38,10 @@ export default {
 }
 </script>
 <style>
-
+  th {
+      text-align: left;
+  }
+  td {
+      text-align: left;
+  }
 </style>
